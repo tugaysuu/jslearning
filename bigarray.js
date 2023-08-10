@@ -41,7 +41,7 @@ const users = [
         Year: 2020,
       },
       {
-        Brand: "Honda",
+        Brand: "",
         Model: "Civic",
         Year: 2010,
       },
