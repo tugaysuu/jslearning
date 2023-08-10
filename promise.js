@@ -8,4 +8,4 @@ const myPromise = new Promise((resolve, reject) => {
 });
 
 myPromise.then(() => console.log("success"));
-myPromise.catch(() => console.error("something is wrong."));
+myPromise.catch(() => console.error("something is wrong"));
