@@ -39,6 +39,20 @@
 //---------------------------------------------------------------
 
 
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
-let text = fruits.constructor;
-console.log(text)
+//const fruits = ["Banana", "Orange", "Apple", "Mango"];
+//let text = fruits.constructor;
+//console.log(text)
+
+
+
+//---------------------------------------------------------------
+
+function factorial(n) {
+    if (n === 0 || n === 1) {
+      return 1;
+    } else {
+      return n * factorial(n - 1);
+    }
+  }
+
+  console.log(factorial(170))
