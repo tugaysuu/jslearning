@@ -137,13 +137,17 @@ async function start() {
     start2() */
 
     //---------------------------------------------------------------
-
-    const url = 'http://worldtimeapi.org/api/timezone/America/New_York'
+/*
+     const url = 'http://worldtimeapi.org/api/timezone/America/New_York'
 
     async function getData(){
       const response = await fetch(url)
-      const data = await response.json()
-      console.log(data)
+      //const data = await response.json.parse()
+      console.log(response)
     }
 
-    getData()
+    getData() 
+
+*/
+        //---------------------------------------------------------------
+
