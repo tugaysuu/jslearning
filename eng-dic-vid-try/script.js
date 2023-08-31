@@ -30,7 +30,7 @@ async function fetchAPI(word) {
       titleEl.innerText = result[0].word;
       meaningEl.innerText = result[0].meanings[0].definitions[0].definition;
       meaning2El.innerText = result[0]?.meanings[1]?.definitions[1]?.definition;
-      audioEl.src = result[0].phonetics[0].audio;
+      audioEl.src = result[0]?.phonetics[0]?.audio;
     }
   } catch (error) {
     console.log(error);

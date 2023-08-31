@@ -8664,3 +8664,6 @@ node_modules/ws/lib/sender.js
 node_modules/ws/lib/validation.js
 node_modules/ws/lib/websocket-server.js
 node_modules/ws/lib/websocket.js
+node_modules
+my-first-app/.env
+next-cascading-menu/.env

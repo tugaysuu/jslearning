@@ -1,8 +1,11 @@
 // components/Layout.js
 import Menu from "./Menu";
 import SubMenu from "./SubMenu";
+import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 export default function Layout({ children }) {
   const [selectedMenu, setSelectedMenu] = useState(null);
@@ -17,12 +20,13 @@ export default function Layout({ children }) {
       if (
         mainMenuRef.current &&
         !mainMenuRef.current.contains(event.target) &&
-        submenuRef.current &&
-        !submenuRef.current.contains(event.target)
+        (!submenuRef.current || !submenuRef.current.contains(event.target))
       ) {
         setSelectedMenu(null);
+        setIsMenuVisible(false);
       }
     }
+
     document.addEventListener("mousedown", handleOutsideClick);
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick);
@@ -40,6 +44,9 @@ export default function Layout({ children }) {
 
   return (
     <div className="layout">
+      <Link href="/">
+        <FontAwesomeIcon icon={faHome} className="homeButton" />
+      </Link>
       <button
         className="menuButton"
         onClick={() => setIsMenuVisible(!isMenuVisible)}
@@ -60,36 +67,6 @@ export default function Layout({ children }) {
       )}
 
       <div className="content">{children}</div>
-
-      <style jsx>{`
-        .layout {
-          display: flex;
-          position: relative;
-        }
-        .menuButton {
-          background-color: lightbrown;
-          border: none;
-          font-size: 24px;
-          cursor: pointer;
-          position: absolute;
-          top: 10px;
-          left: 10px;
-        }
-        .menuButton:focus {
-          outline: none;
-        }
-        .mainMenu {
-          position: absolute;
-          top: 50px;
-          left: 60px; // Adjusted to open on the right side of the hamburger
-        }
-        .submenuContainer {
-          position: absolute;
-          top: 50px;
-          left: 250px; // Adjusted for the width of the main menu + padding
-        }
-      `}</style>
     </div>
   );
 }
-
