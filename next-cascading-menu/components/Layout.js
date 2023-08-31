@@ -1,4 +1,4 @@
-// components/Layout.js
+
 import Menu from "./Menu";
 import SubMenu from "./SubMenu";
 import Link from "next/link";

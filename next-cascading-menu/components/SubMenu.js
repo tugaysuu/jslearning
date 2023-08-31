@@ -1,4 +1,4 @@
-// components/SubMenu.js
+
 function SubMenu({ onSelect, selectedMenu }) {
   let buttons = [];
 
@@ -48,7 +48,7 @@ function SubMenu({ onSelect, selectedMenu }) {
         </button>
       );
       break;
-    // Add more cases if needed.
+
   }
 
   
