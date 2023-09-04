@@ -13,6 +13,7 @@ export default function Page1() {
 
   const [showModal, setShowModal] = useState(true);
   const [locationInput, setLocationInput] = useState("");
+  
 
   const handleModalResponse = (response) => {
     setShowModal(false);
@@ -53,6 +54,7 @@ export default function Page1() {
     const res = await fetch(`/api/forecast?q=${locationInput}`);
     const data = await res.json();
     setForecast(data);
+    console.log(data);
   };
 
   useEffect(() => {
@@ -109,7 +111,7 @@ export default function Page1() {
             onChange={handleInputChange}
             placeholder="Enter city name"
           />
-          <button onClick={handleSubmitLocation}>Submit</button>
+          <button className="modal-button" onClick={handleSubmitLocation}>Submit</button>
         </div>
       )}
       {forecast &&
